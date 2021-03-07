@@ -4,18 +4,19 @@ import 'package:audioplayers/audio_cache.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
-  final player = AudioCache();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: Center(
-            child: TextButton(
+            child: MaterialButton(
               onPressed: () {
-                player.play('note1.wav');
+                final player = AudioCache();
+                player.play("note1.wav");
               },
               child: Text("Press me"),
+              enableFeedback: false,
             ),
           ),
         ),
